@@ -856,26 +856,26 @@ class MapView extends React.Component {
     return Promise.reject('takeSnapshot not supported on this platform');
   }
 
-  /**
-   * Convert a coordinate to address by using default Geocoder
-   *
-   * @param coordinate Coordinate
-   * @param [coordinate.latitude] Latitude
-   * @param [coordinate.longitude] Longitude
-   *
-   * @return Promise with return type Address
-   */
-  addressForCoordinate(coordinate) {
-    if (Platform.OS === 'android') {
-      return NativeModules.AirMapModule.getAddressFromCoordinates(
-        this._getHandle(),
-        coordinate
-      );
-    } else if (Platform.OS === 'ios') {
-      return this._runCommand('getAddressFromCoordinates', [coordinate]);
-    }
-    return Promise.reject('getAddress not supported on this platform');
-  }
+  // /**
+  //  * Convert a coordinate to address by using default Geocoder
+  //  *
+  //  * @param coordinate Coordinate
+  //  * @param [coordinate.latitude] Latitude
+  //  * @param [coordinate.longitude] Longitude
+  //  *
+  //  * @return Promise with return type Address
+  //  */
+  // addressForCoordinate(coordinate) {
+  //   if (Platform.OS === 'android') {
+  //     return NativeModules.AirMapModule.getAddressFromCoordinates(
+  //       this._getHandle(),
+  //       coordinate
+  //     );
+  //   } else if (Platform.OS === 'ios') {
+  //     return this._runCommand('getAddressFromCoordinates', [coordinate]);
+  //   }
+  //   return Promise.reject('getAddress not supported on this platform');
+  // }
 
   /**
    * Convert a map coordinate to user-space point
@@ -1119,12 +1119,12 @@ if (!NativeModules.UIManager.getViewManagerConfig) {
 
 export const Animated = RNAnimated.createAnimatedComponent(MapView);
 
-export const enableLatestRenderer = () => {
-  if (Platform.OS !== 'android') {
-    return;
-  }
-  return NativeModules.AirMapModule.enableLatestRenderer();
-};
+// export const enableLatestRenderer = () => {
+//   if (Platform.OS !== 'android') {
+//     return;
+//   }
+//   return NativeModules.AirMapModule.enableLatestRenderer();
+// };
 
 export const ProviderPropType = PropTypes.oneOf(
   Object.values(ProviderConstants)

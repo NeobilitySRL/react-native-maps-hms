@@ -331,7 +331,7 @@ declare module 'react-native-maps' {
     setMapBoundaries(northEast: LatLng, southWest: LatLng): void;
     getMapBoundaries(): Promise<{ northEast: LatLng; southWest: LatLng }>;
     takeSnapshot(options?: SnapshotOptions): Promise<string>;
-    addressForCoordinate(coordinate: LatLng): Promise<Address>;
+    // addressForCoordinate(coordinate: LatLng): Promise<Address>;
     pointForCoordinate(coordinate: LatLng): Promise<Point>;
     coordinateForPoint(point: Point): Promise<LatLng>;
     setIndoorActiveLevelIndex(index: number): void;
@@ -630,7 +630,7 @@ declare module 'react-native-maps' {
     MUTEDSTANDARD: MapTypes;
   };
 
-  export const enableLatestRenderer: () => Promise<'LATEST' | 'LEGACY'> | void;
+  // export const enableLatestRenderer: () => Promise<'LATEST' | 'LEGACY'> | void;
 
   export const PROVIDER_DEFAULT: null;
   export const PROVIDER_GOOGLE: 'google';

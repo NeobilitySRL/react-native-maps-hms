@@ -32,6 +32,9 @@ repositories {
   mavenLocal()
   mavenCentral()
   maven {
+    url 'https://developer.huawei.com/repo/'
+  }
+  maven {
     // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
     url "$rootDir/../node_modules/react-native/android"
   }
@@ -45,9 +48,11 @@ repositories {
 dependencies {
   def work_version = safeExtGet('targetSdkVersion', 27) < 31 ? "2.5.0" : "2.7.1"
   implementation 'com.facebook.react:react-native:+'
-  implementation "com.google.android.gms:play-services-base:${safeExtGet('playServicesVersion', '18.0.1')}"
+  // implementation "com.google.android.gms:play-services-base:${safeExtGet('playServicesVersion', '18.0.1')}"
   implementation "com.google.android.gms:play-services-maps:${safeExtGet('playServicesVersion', '18.0.2')}"
-  implementation "com.google.android.gms:play-services-location:19.0.1"
+  // implementation "com.google.android.gms:play-services-location:19.0.1"
   implementation 'com.google.maps.android:android-maps-utils:0.5'
   implementation "androidx.work:work-runtime:$work_version"
+  implementation 'com.huawei.hms:maps:5.3.0.300'
+  implementation 'com.huawei.hms:location:5.1.0.305'
 }
